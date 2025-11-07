@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { AppContext, AppContextInternal } from "./AppContext";
-import { Canvas } from "./Canvas";
+import { Canvas } from "./components/Canvas";
 
 function App() {
   const [appContext, setAppContext] = useState<AppContext>();
