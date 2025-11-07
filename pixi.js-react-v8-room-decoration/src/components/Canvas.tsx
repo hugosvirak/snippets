@@ -9,7 +9,7 @@ extend({
 
 export const Canvas = () => {
   return (
-    <PixiCanvas backgroundColor={"rgb(255, 253, 234)"} backgroundAlpha={1}>
+    <PixiCanvas backgroundColor={"rgb(255, 253, 234)"} backgroundAlpha={0}>
       <Room />
     </PixiCanvas>
   );
