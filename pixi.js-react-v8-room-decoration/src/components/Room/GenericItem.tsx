@@ -1,18 +1,28 @@
 import { FederatedPointerEvent, Graphics } from "pixi.js";
 import { useCallback, useRef } from "react";
-import { useAppContext } from "../../AppContext";
+import { useAppContext, type ObjectType } from "../../AppContext";
+import { drawBed, drawFridge } from "./miscDrawCalls";
 
-export const Bed = (props: { id: number; x: number; y: number }) => {
+export const GenericItem = (props: {
+  id: number;
+  x: number;
+  y: number;
+  itemType: ObjectType;
+}) => {
   const appContext = useAppContext();
   const graphics = useRef<Graphics>(null);
 
-  const drawCallback = useCallback((graphics: Graphics) => {
-    graphics.clear();
-    graphics.roundRect(0, 0, 100, 180, 4);
-    graphics.fill({ color: "rgb(226, 226, 226)" });
-    graphics.roundRect(2, 2, 96, 36, 5);
-    graphics.fill({ color: "rgba(99, 99, 99, 1)" });
-  }, []);
+  const drawCallback = useCallback(
+    (graphics: Graphics) => {
+      graphics.clear();
+      if (props.itemType === "BED") {
+        drawBed(graphics);
+      } else if (props.itemType === "FRIDGE") {
+        drawFridge(graphics);
+      }
+    },
+    [props.itemType]
+  );
 
   return (
     <pixiGraphics
