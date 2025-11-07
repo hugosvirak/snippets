@@ -1,13 +1,13 @@
-import { Application, extend } from "@pixi/react";
 import { Container, Graphics } from "pixi.js";
 import { useCallback } from "react";
+import { Application as PixiCanvas, extend } from "@pixi/react";
 
 extend({
   Container,
   Graphics,
 });
 
-export const MyComponent = () => {
+export const Canvas = () => {
   const drawCallback = useCallback((graphics: Graphics) => {
     graphics.clear();
     graphics.setFillStyle({ color: "red" });
@@ -16,10 +16,10 @@ export const MyComponent = () => {
   }, []);
 
   return (
-    <Application>
+    <PixiCanvas>
       <pixiContainer x={100} y={100}>
         <pixiGraphics draw={drawCallback} />
       </pixiContainer>
-    </Application>
+    </PixiCanvas>
   );
 };
