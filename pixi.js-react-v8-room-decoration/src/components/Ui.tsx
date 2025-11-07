@@ -16,6 +16,7 @@ export function Ui() {
       {OBJECTS.map((object: ObjectType) => {
         return (
           <button
+            key={object}
             onClick={() => {
               appContext.createObject(object);
             }}
