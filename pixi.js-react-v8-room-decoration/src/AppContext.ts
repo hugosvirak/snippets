@@ -7,6 +7,13 @@ export class AppContext {
   public readonly dispose = () => {
     //
   };
+
+  public createBed = () => {
+    const beds = this.beds.get();
+    const newBeds = [...beds, { id: beds.length, x: 0, y: 0 }];
+
+    this.beds.set(newBeds);
+  };
 }
 
 export const AppContextInternal = createContext<AppContext | undefined>(
