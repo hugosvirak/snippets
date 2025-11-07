@@ -5,7 +5,13 @@ export function Ui() {
 
   return (
     <>
-      <button onClick={appContext.createBed}>Create Bed</button>
+      <button
+        onClick={() => {
+          appContext.createObject("BED");
+        }}
+      >
+        Create Bed
+      </button>
     </>
   );
 }
