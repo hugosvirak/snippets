@@ -1,7 +1,7 @@
 import { FederatedPointerEvent, Graphics } from "pixi.js";
 import { useCallback, useRef } from "react";
 import { useAppContext, type ObjectType } from "../../AppContext";
-import { drawBed, drawFridge } from "./miscDrawCalls";
+import { drawBed, drawBedsideTable, drawFridge } from "./miscDrawCalls";
 
 export const GenericItem = (props: {
   id: number;
@@ -19,6 +19,8 @@ export const GenericItem = (props: {
         drawBed(graphics);
       } else if (props.itemType === "FRIDGE") {
         drawFridge(graphics);
+      } else if (props.itemType === "BEDSIDE_TABLE") {
+        drawBedsideTable(graphics);
       }
     },
     [props.itemType]

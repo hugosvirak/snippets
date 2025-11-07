@@ -13,3 +13,8 @@ export function drawFridge(graphics: Graphics) {
   graphics.roundRect(1, 1, 3, 49, 4);
   graphics.fill({ color: "rgba(138, 193, 255, 1)" });
 }
+
+export function drawBedsideTable(graphics: Graphics) {
+  graphics.roundRect(0, 0, 50, 50, 4);
+  graphics.fill({ color: "rgba(53, 28, 0, 1)" });
+}

@@ -19,6 +19,13 @@ export function Ui() {
       >
         Create Bed
       </button>
+      <button
+        onClick={() => {
+          appContext.createObject("BEDSIDE_TABLE");
+        }}
+      >
+        Create Bedside Table
+      </button>
     </>
   );
 }
