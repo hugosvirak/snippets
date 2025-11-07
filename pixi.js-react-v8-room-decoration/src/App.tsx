@@ -1,10 +1,29 @@
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
+import { AppContext, AppContextInternal } from "./AppContext";
 import { Canvas } from "./Canvas";
 
 function App() {
+  const [appContext, setAppContext] = useState<AppContext>();
+  const appContextRef = useRef<AppContext | undefined>(undefined);
+
+  useEffect(() => {
+    appContextRef.current = new AppContext();
+    setAppContext(appContextRef.current);
+    return () => {
+      appContextRef.current?.dispose();
+    };
+  }, [appContextRef]);
+
+  if (appContext === undefined) {
+    return <span>Loading</span>;
+  }
+
   return (
     <>
-      <Canvas />
+      <AppContextInternal.Provider value={appContext}>
+        <Canvas />
+      </AppContextInternal.Provider>
     </>
   );
 }
