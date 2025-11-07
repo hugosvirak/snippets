@@ -1,6 +1,9 @@
 import { createContext, useContext } from "react";
+import { Value } from "./utils/Value";
 
 export class AppContext {
+  beds = new Value(new Array<{ id: number; x: number; y: number }>());
+
   public readonly dispose = () => {
     //
   };
