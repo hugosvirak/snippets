@@ -8,8 +8,8 @@ export const Room = () => {
 
   return (
     <>
-      {beds.map(() => {
-        return <Bed />;
+      {beds.map((bed) => {
+        return <Bed key={bed.id} x={bed.x} y={bed.y} />;
       })}
     </>
   );

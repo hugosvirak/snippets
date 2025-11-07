@@ -1,7 +1,7 @@
 import { Graphics } from "pixi.js";
 import { useCallback } from "react";
 
-export const Bed = () => {
+export const Bed = (props: { x: number; y: number }) => {
   const drawCallback = useCallback((graphics: Graphics) => {
     graphics.clear();
     graphics.roundRect(0, 0, 100, 180, 4);
@@ -10,5 +10,5 @@ export const Bed = () => {
     graphics.fill({ color: "rgba(99, 99, 99, 1)" });
   }, []);
 
-  return <pixiGraphics draw={drawCallback} />;
+  return <pixiGraphics x={props.x} y={props.y} draw={drawCallback} />;
 };
