@@ -7,6 +7,13 @@ export function Ui() {
     <>
       <button
         onClick={() => {
+          appContext.createObject("FRIDGE");
+        }}
+      >
+        Create Fridge
+      </button>
+      <button
+        onClick={() => {
           appContext.createObject("BED");
         }}
       >

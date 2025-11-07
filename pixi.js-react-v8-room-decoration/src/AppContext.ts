@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import { Value } from "./utils/Value";
 
-export type ObjectType = "BED";
+export type ObjectType = "BED" | "FRIDGE";
 
 export class AppContext {
   private selectedObjects = new Array<{
