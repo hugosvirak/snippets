@@ -1,4 +1,4 @@
-num_functions = 1000
+num_functions = 600
 functions_code = ""
 for i in range(1, num_functions + 1):
     if i < num_functions:

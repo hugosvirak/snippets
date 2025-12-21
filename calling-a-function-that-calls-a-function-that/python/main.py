@@ -1201,10 +1201,15 @@ def F599():
 def F600():
     print("Hello World")
 
+durations = []
+
 for i in range(20):
     start = time.perf_counter()
     F600()
     end = time.perf_counter()
-    duration = (end - start) * 1000
-
+    duration = (end - start) * 1000  # ms
+    durations.append(duration)
     print(f"{duration:.3f} ms")
+
+average = sum(durations) / len(durations)
+print(f"\nAverage: {average:.3f} ms")
