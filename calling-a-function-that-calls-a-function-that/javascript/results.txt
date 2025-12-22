@@ -1,0 +1,8 @@
+1: 0.058ms
+10000: 0.3 ms
+
+0.3 - 0.058 = 0.242ms for 10000 calls
+
+0.242 / 10000 = 0.0000242ms
+
+0.0000242 milliseconds == 24.2 nanoseconds per function call

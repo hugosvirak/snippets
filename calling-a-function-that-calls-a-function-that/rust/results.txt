@@ -1,0 +1,8 @@
+1: 80: microseconds
+6000: 133 microseconds
+
+133 - 80 = 53 microseconds for 6000 calls
+
+53 / 6000 == 0.00883333333 microsecond
+
+0.00883333333 microseconds == 8.83 nanoseconds per function call
